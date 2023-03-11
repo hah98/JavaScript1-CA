@@ -25,19 +25,44 @@
     <main>
 
       <div class="container-con">
-        <form class="form">
+        <form id="form">
           <h3>Contact Us</h3>
+          <div>
+            <label>
           <input type="text" id="names" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="email Adress" required />
-          <textarea id="adress" rows="3" placeholder="Home Adress"></textarea>
-          <button type="submitt" id="submitt">Send</button>
+          </label>
+          <div class="form-error" id="namesError">Name is required</div>
+          </div>
+
+          <div>
+            <label>
+              <textarea id="subject" placeholder="Subject"></textarea>
+              <div class="form-error" id="subjectError">Must have a value with a minimum length of 10</div>
+            </label>
+          </div>
+          
+          <div>
+            <label>
+              <input type="email" id="email" placeholder="Email Adress" required />
+            </label>
+            <div class="form-error" id="emailError">Must be formatted like an Email</div>
+          </div>
+         
+          <div>
+            <label> 
+              <textarea id="adress" placeholder="Home Adress"></textarea>
+            </label>
+            <div class="form-error" id="adressError">Must have a value with a minimum length of 25</div>
+          </div>
+          
+          <button type="submit" id="submit">Send</button>
         </form>
       </div>
 
-      <script src="./JS/script.js"></script>
-      <script scr="./JS/contact.js"></script>
+    
+      
     </main>
-
+          <script scr="./JS/contact.js"></script>
     <footer>
       <footer>
         <nav class="footerbar">

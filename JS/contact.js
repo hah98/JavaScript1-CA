@@ -1,25 +1,69 @@
-const sendForm = document.document.querySelector("sendForm");
+const form = document.querySelector("#form");
+const names = document.querySelector("#names");
+const namesError = document.querySelector("#namesError");
+const subject = document.querySelector("#subject");
+const lastNameError = document.querySelector("#subjectError");
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+const adress = document.querySelector("#adress");
+const adressError = document.querySelector("#adressError");
 
-sendForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+function validateForm(event) {
+    event.preventDefault();
 
-let names = document.getElementById("name");
-let email = document.getElementById("email");
-let adress = document.getElementById("adress");
-let submitt = document.getElementById("submitt");
+    if (checkLength(names.value, 0) === true) {
+        namesError.style.display = "none";
+    } else {
+        namesError.style.display = "block";
+    }
 
-if (
-  names.value == "" ||
-  email.value == "" ||
-  adress.value == "" ||
-  submitt.value == ""
-) {
-  alert("please make sure to fill out the whole form!");
-} else {
-  alert("Your information has been successfully submitted!");
-  console.log(
-    `This form has a username of ${names.value} , emailadress of ${email.value} , adress of ${adress.value} 
-     and send of ${submitt.value}`
-  );
+    if (checkLength(subject.value, 10) === true) {
+        subjectError.style.display = "none";
+    } else {
+        subjectError.style.display = "block";
+    }
+
+    if (validateEmail(email.value) === true) {
+        emailError.style.display = "none";
+    } else {
+        emailError.style.display = "block";
+    }
+
+    if (checkLength(adress.value, 25) === true) {
+      adressError.style.display = "none";
+  } else {
+      adressError.style.display = "block";
+  }
+
+  
+    console.log("hello");
 }
+
+form.addEventListener("submit", validateForm);
+
+function checkLength(value, len) {
+    if (value.trim().length > len) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

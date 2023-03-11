@@ -203,3 +203,12 @@ form button {
   margin: 20px auto 0;
   border-radius: 30px;
 }
+
+
+
+.form-error {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}

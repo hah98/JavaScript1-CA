@@ -1,4 +1,4 @@
-const URL = "https://animechan.vercel.app/api/quotes/anime?title=naruto";
+const URL = "https://cat-fact.herokuapp.com/facts";
 const results = [];
 
 const container = document.querySelector(".naruto");
@@ -28,15 +28,12 @@ fetchData().then(() => {
       const anime = document.createElement("h1");
       anime.innerText = char.anime; /* same name as api attribute */
 
-      const character = document.createElement("h2");
-      character.innerText = char.character;
 
       const quote = document.createElement("p");
       quote.innerText = char.quote;
 
       /*  adding elements to little container*/
       containerChar.appendChild(anime);
-      containerChar.appendChild(character);
       containerChar.appendChild(quote);
 
       /* adding little container to main containers */
